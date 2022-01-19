@@ -4,8 +4,10 @@ package com.example.rte
  * Runtime environment
  * This class is the entry into the framework
  */
-class Rte {
+open class Rte {
 
-
+    fun run(application: RteApplication){
+        application.start()
+    }
 
 }

@@ -1,3 +1,7 @@
 package com.example.rte
 
-class RteApplication {}
+interface RteApplication {
+
+    fun start()
+
+}
