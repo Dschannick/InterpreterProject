@@ -1,3 +1,13 @@
 package mainclasses
 
-class AipLine {}
+class AipLine {
+
+    fun excute()  {
+
+    }
+
+    fun excuteWithReturn() : AipObject  {
+
+    }
+
+}

@@ -1,11 +1,7 @@
 package mainclasses
 
-open class AipMethod(override val parameters: List<AipOjectdentifer>
+abstract class AipMethod(//TODO add references
 ) : AipBlock {
 
-    val returnType : AipClass = AipClass()
-
-    override fun run(provider: ReferenceProvider) {
-    }
-
+    abstract override fun run(): AipObject
 }

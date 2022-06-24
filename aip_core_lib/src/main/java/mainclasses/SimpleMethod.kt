@@ -1,11 +1,11 @@
 package mainclasses
 
 class SimpleMethod(
-        override val parameters: List<AipOjectdentifer>
-) : AipMethod(parameters) {
+         //TODO add references
+) : AipMethod() {
 
-    override fun run(provider: ReferenceProvider) {
-
+    override fun run(): AipObject {
+        return SimpleObject(ArrayList(), ArrayList());
     }
 
 }

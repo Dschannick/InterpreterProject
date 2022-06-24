@@ -1,11 +1,10 @@
 package com.test_pack
 
-import mainclasses.AipObject
-import mainclasses.ReferenceProvider
+import mainclasses.SimpleObject
 
-class TestWriterObject : AipObject {
+class TestWriterObject : SimpleObject{
 
-    constructor(writer: Writer) : super(TestWriterClass()) {
+    constructor(writer: Writer) : super(listOf(TestWriterObject_Method1(writer)), ArrayList()) {
 
     }
 

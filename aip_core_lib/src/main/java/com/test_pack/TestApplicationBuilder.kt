@@ -1,6 +1,7 @@
 package com.test_pack
 
 import mainclasses.SimpleApplication
+import mainclasses.SimpleMethod
 
 class TestApplicationBuilder(
         val writer: Writer
@@ -8,8 +9,8 @@ class TestApplicationBuilder(
 
     fun build(): SimpleApplication{
         val module = TestAipModule(writer)
-        return SimpleApplication(module)
+        val startLogic = SimpleMethod()// TODO add proper Logic
+        return SimpleApplication(module, startLogic)
     }
 
-// module.getObjects()[0].clazz.methods[0]
 }

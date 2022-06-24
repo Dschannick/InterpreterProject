@@ -1,10 +1,17 @@
 package mainclasses
 
-abstract class AipObject(
-        val clazz: AipClass
-) {
+abstract class AipObject(val methods : List<AipMethod>) {
 
-    val referenceProvider: ReferenceProvider = ReferenceProvider(HashMap())
-    val references : Map<AipOjectdentifer, AipObject> = HashMap()
+    val references : MutableList<AipObject> = ArrayList()
+
+    abstract fun getInteger(i: Int): Int
+
+    abstract fun getString(i: Int): String
+
+    abstract fun getBoolean(i: Int): Boolean
+
+    abstract fun getLong(i: Int): Long
+
+    abstract fun getChar(i: Int): Char
 
 }
