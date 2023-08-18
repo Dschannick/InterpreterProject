@@ -15,7 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "TEXT_1", project.us_text_1
+        buildConfigField "String", "TEXT_2", project.text_2
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -67,6 +67,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    applicationVariants.all { variant ->
+        buildConfigField "String", "TEXT1", "${project.properties["${variant.productFlavors[0].name}_text_1"]}"
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
