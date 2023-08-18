@@ -16,8 +16,29 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    productFlavors {
+        us {
+            // Configuration for the US version of the app
+            resValue "string", "app_name", "My App (US)"
+            buildConfigField "String", "COUNTRY_CODE", "\"US\""
+        }
+
+        uk {
+            // Configuration for the UK version of the app
+            resValue "string", "app_name", "My App (UK)"
+            buildConfigField "String", "COUNTRY_CODE", "\"UK\""
+        }
+    }
+
+    // Combine product flavors with build types to create variants
+    flavorDimensions "country"
     buildTypes {
         release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
