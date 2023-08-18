@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
 }
 
+apply from: '../build_properties_override.gradle'
+
 android {
     compileSdk 31
 
@@ -13,25 +15,48 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField "String", "TEXT_1", project.us_text_1
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     productFlavors {
         us {
             // Configuration for the US version of the app
+            applicationId project.properties["${name}_package_base"]
+            versionName project.properties["${name}_version_name"]
+            versionCode = project.properties["${name}_version_code"].toInteger()
             resValue "string", "app_name", "My App (US)"
             buildConfigField "String", "COUNTRY_CODE", "\"US\""
+            dimension "geo"
         }
 
-        uk {
-            // Configuration for the UK version of the app
-            resValue "string", "app_name", "My App (UK)"
-            buildConfigField "String", "COUNTRY_CODE", "\"UK\""
+        de {
+            // Configuration for the DE version of the app
+            applicationId project.properties["${name}_package_base"]
+            versionName project.properties["${name}_version_name"]
+            versionCode = project.properties["${name}_version_code"].toInteger()
+            resValue "string", "app_name", "My App (DE)"
+            buildConfigField "String", "COUNTRY_CODE", "\"DE\""
+            dimension "geo"
+        }
+
+        qa {
+            applicationIdSuffix project.properties["${name}_package_suffix"]
+            buildConfigField "boolean", "LOGGING_ENABLED", "true"
+            dimension "env"
+        }
+
+        production {
+            applicationIdSuffix project.properties["${name}_package_suffix"]
+            buildConfigField "boolean", "LOGGING_ENABLED", "false"
+            dimension "env"
         }
     }
 
     // Combine product flavors with build types to create variants
-    flavorDimensions "country"
+    flavorDimensions "geo", "env"
+
     buildTypes {
         release {
             minifyEnabled false
