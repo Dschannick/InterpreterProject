@@ -1,14 +1,14 @@
 package com.example.interpreterproject.testapp
 
 import android.app.Application
-import com.example.interpreterproject.dagger.GlobalComponent
+import com.example.interpreterproject.dagger.AppComponent
 
 class BaseApplication : Application() {
 
-    private var component: GlobalComponent? = null
+    private var component: AppComponent? = null
 
     override fun onCreate() {
         super.onCreate()
-        component = Dagger
+        component = DaggerAppComponent.create()
     }
 }
