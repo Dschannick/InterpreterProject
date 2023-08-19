@@ -11,6 +11,5 @@ class MainActivity : AppCompatActivity() {
         var tw = findViewById<TextView>(R.id.mainText)
         tw.text = "set text  " + BuildConfig.TEXT1 + " /  " + BuildConfig.TEXT_2
 
-
     }
 }
