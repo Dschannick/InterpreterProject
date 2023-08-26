@@ -12,7 +12,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("Yannick", TestAccess().testString + " X " + TestAccessCoreLib().testString)
         findViewById<TextView>(R.id.showTextField).text = TestAccess().testString + " X " + TestAccessCoreLib().testString
+
+   /// This is a Test
     }
 }
