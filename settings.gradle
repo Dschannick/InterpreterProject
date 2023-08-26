@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "InterpreterProject"
 include ':app'
+include ':rte'
+include ':aip_core_lib'
