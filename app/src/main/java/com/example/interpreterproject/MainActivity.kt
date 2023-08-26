@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<TextView>(R.id.showTextField).text = TestAccess().testString + " X " + TestAccessCoreLib().testString
 
-   /// This is a Test
+        /// This is a test
+        /// This is an other test
     }
 }
