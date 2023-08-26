@@ -14,5 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Log.d("Yannick", TestAccess().testString + " X " + TestAccessCoreLib().testString)
         findViewById<TextView>(R.id.showTextField).text = TestAccess().testString + " X " + TestAccessCoreLib().testString
+
+   // SES-556 changes
     }
 }
